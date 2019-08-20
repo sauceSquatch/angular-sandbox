@@ -1,0 +1,16 @@
+<h3>assignment 2</h3>
+<input
+  type="text"
+  class="form-control"
+  [(ngModel)]="userName">
+<div class="row">username = {{userName}}</div>
+
+<button 
+  type="button"
+  class="btn btn-primary"
+  (click)="onUpdateUserName()"
+  [disabled]="isUserNameEmpty()">
+  reset username
+</button>
+<hr>
+{{updateStatus}}

@@ -1,0 +1,11 @@
+<h4>Assignment 4</h4>
+<div class="scoreboard">{{currentCount}}</div>
+<app-game-control
+  (tick)="onTick($event)">
+</app-game-control>
+<app-game-piece
+  [element]="countDataOdd">
+</app-game-piece>
+<app-game-piece
+  [element]="countDataEven">
+</app-game-piece>

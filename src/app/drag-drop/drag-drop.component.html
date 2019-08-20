@@ -1,0 +1,133 @@
+<div class="sandbox-container">
+  <h3>Dynamic Content Demo</h3>
+  For this demo imagine we have imported the list file, populated the list of variables "items" on the left. Drag and drop the variables into place and save the data to Firebase to ready the API.
+</div>
+<hr>
+<h2>Drag Data to Variables to Output</h2>
+<div class="drop-group" cdkDropListGroup>
+  <div 
+    cdkDropList
+    [cdkDropListData]="items"
+    (cdkDropListDropped)="dropped($event)"
+    class="drop-container">
+    <div *ngFor="let item of items" class="box drag-item available-var" cdkDrag>{{item}}</div>
+  </div>
+  <div class="main-content">
+    <div class="buckets-container">
+      <h4>Offer Data to GAM </h4>
+      <div class="bucket">
+        <div class="bucket-header h4">cardProduct</div>
+        <div
+          cdkDropList
+          [cdkDropListData]="cardProductList"
+          class="drop-bucket"
+          (cdkDropListDropped)="dropped($event)">
+          <div class="drag-item-dropped" *ngFor="let item of cardProductList" cdkDrag>{{item}}</div>
+        </div>
+      </div>
+      <div class="bucket">
+        <div class="bucket-header h4">spendAmount</div>
+        <div
+          cdkDropList
+          [cdkDropListData]="spendAmountList"
+          class="drop-bucket"
+          (cdkDropListDropped)="dropped($event)">
+          <div class="drag-item-dropped" *ngFor="let item of spendAmountList" cdkDrag>{{item}}</div>
+        </div>
+      </div>
+      <div class="bucket">
+        <div class="bucket-header h4">getAmount</div>
+        <div
+          cdkDropList
+          [cdkDropListData]="getAmountList"
+          class="drop-bucket"
+          (cdkDropListDropped)="dropped($event)">
+          <div class="drag-item-dropped" *ngFor="let item of getAmountList" cdkDrag>{{item}}</div>
+        </div>
+      </div>
+      <div class="bucket">
+        <div class="bucket-header h4">category</div>
+        <div
+          cdkDropList
+          [cdkDropListData]="categoryList"
+          class="drop-bucket"
+          (cdkDropListDropped)="dropped($event)">
+          <div class="drag-item-dropped" *ngFor="let item of categoryList" cdkDrag>{{item}}</div>
+        </div>
+      </div>
+      <div class="bucket">
+        <div class="bucket-header h4">upToAmount</div>
+        <div
+          cdkDropList
+          [cdkDropListData]="upToAmountList"
+          class="drop-bucket"
+          (cdkDropListDropped)="dropped($event)">
+          <div class="drag-item-dropped" *ngFor="let item of upToAmountList" cdkDrag>{{item}}</div>
+        </div>
+      </div>
+      <div class="bucket">
+        <div class="bucket-header h4">offerStartDate</div>
+        <div
+          cdkDropList
+          [cdkDropListData]="offerStartDateList"
+          class="drop-bucket"
+          (cdkDropListDropped)="dropped($event)">
+          <div class="drag-item-dropped" *ngFor="let item of offerStartDateList" cdkDrag>{{item}}</div>
+        </div>
+      </div>
+      <div class="bucket">
+        <div class="bucket-header h4">offerEndDate</div>
+        <div
+          cdkDropList
+          [cdkDropListData]="offerEndDateList"
+          class="drop-bucket"
+          (cdkDropListDropped)="dropped($event)">
+          <div class="drag-item-dropped" *ngFor="let item of offerEndDateList" cdkDrag>{{item}}</div>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class="data-key">
+      <div class="data-grid" [hidden]="!hasData">
+        <div class="data-column">
+          <div class="data-head h5">cardProduct</div>
+          <div class="data h5">{{sanitizeAfter(cardProductList[0])}}</div>
+        </div>
+        <div class="data-column">
+          <div class="data-head h5">spendAmount</div>
+          <div class="data h5">{{sanitizeAfter(spendAmountList[0])}}</div>
+        </div>
+        <div class="data-column">
+          <div class="data-head h5">getAmount</div>
+          <div class="data h5">{{sanitizeAfter(getAmountList[0])}}</div>
+        </div>
+        <div class="data-column">
+          <div class="data-head h5">category</div>
+          <div class="data h5">{{sanitizeAfter(categoryList[0])}}</div>
+        </div>
+        <div class="data-column">
+          <div class="data-head h5">upToAmount</div>
+          <div class="data h5">{{sanitizeAfter(upToAmountList[0])}}</div>
+        </div>
+        <div class="data-column">
+          <div class="data-head h5">offerStartDate</div>
+          <div class="data h5">{{sanitizeAfter(offerStartDateList[0])}}</div>
+        </div>
+        <div class="data-column">
+          <div class="data-head h5">offerEndDate</div>
+          <div class="data h5">{{sanitizeAfter(offerEndDateList[0])}}</div>
+        </div>
+      </div>
+    </div>
+    <div class="bucket-footer">
+      <div class="output" [hidden]="!hasData">
+        <ul>
+          <li class="h2">{{nativeStyleHeadline}}</li>
+          <li class="h4">{{nativeStyleBody}}</li>
+          <li>{{nativeStyleOfferPeriod}}</li>
+        </ul>
+      </div>
+      <button (click)="submitClick($event)" class="btn btn-primary process-btn">Process Data to Cloud ></button>
+    </div>
+  </div>
+</div>

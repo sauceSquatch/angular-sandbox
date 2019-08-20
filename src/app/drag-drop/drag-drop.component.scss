@@ -1,0 +1,136 @@
+.drag-item {
+  text-align: center;
+  padding: 12px 8px;
+  background-color: #4273b6;
+  color: #ffffff;
+  max-width: 200px;
+  border-radius: 7px;
+  margin: 5px;
+}
+.drag-item-dropped {
+  text-align: center;
+  padding: 12px 8px;
+  background-color: #9142b6;
+  color: #ffffff;
+  max-width: 200px;
+  border-radius: 7px;
+  margin: 5px;
+}
+
+.used-var {
+  display: block;
+}
+
+.drop-container {
+  position: absolute;
+  border: dotted .5px #333333;
+  background-color: #ccd4d7;
+  // height: 100vh;
+  width: 150px;
+  border-radius: 7px;
+  padding: 10px;
+  text-align: center;
+}
+
+.cdk-drag-preview {
+  box-sizing: border-box;
+  border-radius: 4px;
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+              0 8px 10px 1px rgba(0, 0, 0, 0.14),
+              0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
+.cdk-drag-placeholder {
+  opacity: 0.2;
+}
+
+.cdk-drag-animating {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.example-list.cdk-drop-list-dragging .example-box:not(.cdk-drag-placeholder) {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.main-content {
+  margin: 0 0 0 180px;
+}
+
+.buckets-container {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  padding-top: 30px;
+  align-items: stretch;
+}
+
+.bucket {
+  display: inline-block;
+  text-align: center;
+  
+}
+
+.bucket-header {
+  color: #4273b6;
+}
+
+.drop-bucket {
+  min-height: 130px;
+  min-width: 130px;
+  background-color: #e8ecf0;
+  border: 1px solid #696969;
+  border-radius: 7px;
+  padding: 5px;
+}
+
+.bucket-footer {
+  text-align: right;
+  padding: 5px;
+
+  .process-btn {
+    padding: 15px;
+    font-size: 18px;
+  }
+}
+
+.output {
+  max-width: 900px;
+  text-align: left;
+  padding: 20px 0 0 0;
+  border: 1px solid #333333;
+  margin: 40px 0 0 0;
+  li {
+    list-style-type: none;
+    margin: 0;
+    padding: 5px;
+  }
+}
+
+.data-grid {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  padding-top: 30px;
+  opacity: 0.6;
+
+  .data-column {
+    min-width: 150px;
+    border-radius: 7px;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .data-head {
+    background:#3f4147;
+    color: #e8ecf0;
+    padding: 15px;
+    margin: 0;
+  }
+
+  .data {
+    background-color: #bcbfca;
+    padding: 15px;
+    margin: 0;
+    min-height: 40px;
+  }
+}

@@ -1,0 +1,17 @@
+<h3>assignment 3</h3>
+<button 
+  type="button"
+  class="btn btn-primary"
+  (click)="toggleDetails()">
+  Display Details
+</button>
+showDetails: {{showDetails}}
+<hr>
+<p class="not-shown" [ngClass]="{details: showDetails}">Hey, these are the details to be shown</p>
+<hr>
+clickIndex: {{clickIndex}}
+<ul>
+  <li class="click-item" *ngFor="let item of clicksArray; let i=index">
+    <span [ngClass]="{special: i >= 4}"> number {{i}}</span>
+  </li>
+</ul>
